@@ -4,13 +4,13 @@ import TaskCounter from "./components/TaskCounter";
 import { useTasks } from "./hooks/useTasks";
 
 export default function App() {
-  const { tasks, addTask, toggleTask } = useTasks();
+  const { tasks, addTask, toggleTask, deleteTask } = useTasks();
 
   return (
     <>
       <header>
-        <h1>TaskFlow</h1>
-        <p className="subtitle">Organiza tus pendientes</p>
+        <h1>Mis Tareas</h1>
+        <p className="subtitle">Lo que tengo que sacar esta semana</p>
       </header>
 
       <main>
@@ -18,12 +18,12 @@ export default function App() {
 
         {/* controles de la lista */}
 
-        <TaskList tasks={tasks} onToggle={toggleTask} />
+        <TaskList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask} />
         <TaskCounter tasks={tasks} />
       </main>
 
       <footer>
-        <p id="credits">Hecho por Tu Nombre</p>
+        <p id="credits">Hecho por Anita</p>
       </footer>
     </>
   );

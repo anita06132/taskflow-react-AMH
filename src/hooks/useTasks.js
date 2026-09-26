@@ -44,5 +44,9 @@ export function useTasks() {
     );
   }
 
-  return { tasks, addTask, toggleTask };
+  function deleteTask(id) {
+    setTasks((current) => current.filter((task) => task.id !== id));
+  }
+
+  return { tasks, addTask, toggleTask, deleteTask };
 }

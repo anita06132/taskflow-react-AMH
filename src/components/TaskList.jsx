@@ -1,6 +1,6 @@
 import TaskItem from "./TaskItem";
 
-export default function TaskList({ tasks, onToggle }) {
+export default function TaskList({ tasks, onToggle, onDelete }) {
   if (tasks.length === 0) {
     return (
       <ul>
@@ -12,7 +12,7 @@ export default function TaskList({ tasks, onToggle }) {
   return (
     <ul>
       {tasks.map((task) => (
-        <TaskItem key={task.id} task={task} onToggle={onToggle} />
+        <TaskItem key={task.id} task={task} onToggle={onToggle} onDelete={onDelete} />
       ))}
     </ul>
   );

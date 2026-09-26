@@ -1,12 +1,12 @@
 :root {
-  --bg: #f5f5f5;
+  --bg: #fef9ef;
   --surface: #ffffff;
-  --text: #1f1f1f;
-  --muted: #6b6b6b;
-  --accent: #4a4a4a;
-  --on-accent: #ffffff;
-  --border: #e0e0e0;
-  --done: #9a9a9a;
+  --text: #4a4e69;
+  --muted: #9a8c98;
+  --accent: #8ecae6;
+  --on-accent: #333;
+  --border: #f2e9e4;
+  --done: #b5c9a4;
 }
 
 * {
@@ -107,4 +107,18 @@ footer {
 .title.done {
   text-decoration: line-through;
   color: var(--done);
+}
+
+.delete {
+  margin-left: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 1rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.delete:hover {
+  color: var(--text);
 }

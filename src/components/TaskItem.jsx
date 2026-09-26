@@ -1,4 +1,4 @@
-export default function TaskItem({ task, onToggle }) {
+export default function TaskItem({ task, onToggle, onDelete }) {
   return (
     <li>
       <button
@@ -10,6 +10,14 @@ export default function TaskItem({ task, onToggle }) {
         {task.done ? "●" : "○"}
       </button>
       <span className={task.done ? "title done" : "title"}>{task.title}</span>
+      <button
+        type="button"
+        className="delete"
+        aria-label="Eliminar tarea"
+        onClick={() => onDelete(task.id)}
+      >
+        ✕
+      </button>
     </li>
   );
 }
