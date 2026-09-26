@@ -1,3 +1,11 @@
+function formatDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return "";
+  }
+  return date.toLocaleDateString("es", { day: "numeric", month: "short", year: "numeric" });
+}
+
 export default function TaskItem({ task, onToggle, onDelete }) {
   return (
     <li>
@@ -10,6 +18,9 @@ export default function TaskItem({ task, onToggle, onDelete }) {
         {task.done ? "●" : "○"}
       </button>
       <span className={task.done ? "title done" : "title"}>{task.title}</span>
+      <time className="created" dateTime={task.createdAt}>
+        {formatDate(task.createdAt)}
+      </time>
       <button
         type="button"
         className="delete"

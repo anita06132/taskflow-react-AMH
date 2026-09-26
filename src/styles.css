@@ -109,8 +109,15 @@ footer {
   color: var(--done);
 }
 
-.delete {
+.created {
   margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--muted);
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+.delete {
   padding: 0;
   border: none;
   background: none;
